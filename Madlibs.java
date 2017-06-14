@@ -6,7 +6,24 @@ public class Madlibs {
 
     Console console = System.console();
 
-    console.printf("hello!");
-    
+    String response = console.readLine("Would you like to do a Madlib? Yes or No:  ");
+
+    if (response.equalsIgnoreCase("YES")) {
+      String name = console.readLine("Enter a name:  ");
+      String place = console.readLine("Enter a place:  ");
+      String food = console.readLine("Enter a food:  ");
+      String verb = console.readLine("Enter a verb ending with -ing:  ");
+
+      console.printf("Your MadLib:\n-------------------\n");
+      console.printf("%s went to %s.  \n", name, place);
+      console.printf("They had a great time eating %s.\n", food);
+      console.printf("Then, they went %s... it was exhausting.\n", verb);
+      console.printf("The End!\n");
+
+    } else {
+      console.printf("Ok, Bye!");
+      System.exit(0);
+    }
+
   }
 }
