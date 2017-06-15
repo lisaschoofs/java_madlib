@@ -6,9 +6,12 @@ public class Madlibs {
 
     Console console = System.console();
 
-    String response = console.readLine("Would you like to do a Madlib? Yes or No:  ");
+    // String response = console.readLine("Would you like to do a Madlib? Yes or No:  ");
+    String ageAsString = console.readLine("How old are you?  ");
+    int age = Integer.parseInt(ageAsString);
 
-    if (response.equalsIgnoreCase("YES")) {
+    if (age >= 13) {
+    // if (response.equalsIgnoreCase("YES")) {
       String name = console.readLine("Enter a name:  ");
       String place = console.readLine("Enter a place:  ");
       String food = console.readLine("Enter a food:  ");
