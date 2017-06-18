@@ -16,10 +16,21 @@ public class Madlibs {
       String place = console.readLine("Enter a place:  ");
       String food = console.readLine("Enter a food:  ");
       String verb = console.readLine("Enter a verb ending with -ing:  ");
+      String color;
+      boolean badColor;
 
-      console.printf("Your MadLib:\n-------------------\n");
+      do {
+        color = console.readLine("Enter a color:  ");
+        badColor = (color.equalsIgnoreCase("yellow") ||
+                    color.equalsIgnoreCase("green"));
+        if (badColor) {
+          console.printf("Eh, I don't like that color. Pick something else!\n");
+        }
+      } while (badColor);
+
+      console.printf("Here's Your MadLib!\n-------------------\n");
       console.printf("%s went to %s.  \n", name, place);
-      console.printf("They had a great time eating %s.\n", food);
+      console.printf("They had a great time eating %s %s.\n", color, food);
       console.printf("Then, they went %s... it was exhausting.\n", verb);
       console.printf("The End!\n");
 
